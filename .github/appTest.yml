@@ -1,0 +1,47 @@
+# backend api testing and deployment workflow
+
+name: Application Testing and Deployment
+
+on :
+
+  push:
+
+    branches:
+
+      - backend
+
+  pull_request:
+
+    branches:
+
+      - backend
+
+jobs:
+
+  testingApi:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: checking out the repo
+
+        uses: actions/checkout@v2
+
+      - name: Setting up python environment
+
+        uses: actions/setup-python@v2
+
+      - name : Install dependencies
+
+        run: |
+
+          python -m pip install --upgrade pip
+
+          pip install -r requirements.txt
+
+      - name : Testing the application
+
+        run: |
+
+          flask test
