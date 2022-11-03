@@ -10,7 +10,10 @@ class Config:
 
 class Development(Config):
 
-    pass
+    @staticmethod
+    def init_app(app):
+
+        pass
 
 class Testing(Config):
 
