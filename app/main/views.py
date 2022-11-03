@@ -53,7 +53,11 @@ class Main(MethodView):
 
         # perform operations
 
-        res_results = {"slackUsername":"gibson gichuru", "result":results}
+        res_results = {
+            "slackUsername":"gibson gichuru", 
+            "result":results, 
+            "operation_type":operation_type
+            }
 
 
         return jsonify(res_results)
